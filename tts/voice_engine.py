@@ -17,7 +17,8 @@ def speak_text(text):
 
     def display_words():
         words = text.split()
-        delay = 0.25  # Time between words; tweak to match voice speed
+        delay = 0.2  # Time between words; tweak to match voice speed
+        time.sleep(0.1)
         for word in words:
             print(word, end=' ', flush=True)
             time.sleep(delay)
@@ -26,8 +27,7 @@ def speak_text(text):
     display_thread = threading.Thread(target=display_words)
     display_thread.start()
 
-    stream(audio, play_in_background=True)
-
+    play(audio)
     display_thread.join()
     
     
