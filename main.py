@@ -7,9 +7,8 @@ def main():
     while True:
         user_input = input("You: ")
         response = get_response(user_input)
-        print("Waifu:", response)
+        print("Waifu:", end=" ", flush=True)        
         speak_text(response)
-        #speak_text(response)
         #animate_avatar(response)
 
 if __name__ == "__main__":
